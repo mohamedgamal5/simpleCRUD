@@ -1,0 +1,162 @@
+<div class="row">
+  <div class="col-sm-3">
+    <div class="card border-dark mb-3">
+      <div class="card-header">Insert new user</div>
+      <div class="card-body text-dark">
+        <form action="/insert" method="post">
+          <div class="mb-3">
+            <label
+              for="exampleInputUserName1"
+              class="form-label"
+            >username</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter username"
+              name="username"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Enter ur Email"
+              name="userEmail"
+            />
+          </div>
+          <div class="text-center"><button
+              type="submit"
+              class="btn btn-primary"
+            >Submit</button></div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card border-dark mb-3">
+      <div class="card-header">get all user</div>
+      <div class="card-body text-dark">
+        <form action="/getUsers" method="get">
+          <ul>
+            {{#each users}}
+              <li> ID : {{this._id}}</li>
+              <li> name : {{this.userName}}</li>
+              <li> email : {{this.userEmail}}</li>
+              <hr />
+
+            {{/each}}
+
+          </ul>
+          <div class="text-center"><button
+              type="submit"
+              class="btn btn-primary"
+            >Get users </button></div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card border-dark mb-3">
+      <div class="card-header">Update user</div>
+      <div class="card-body text-dark">
+        <form action="/updateUser" method="post">
+          <div class="form-group">
+            <label for="ID" class="form-label">ID</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter ID"
+              name="ID"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="UserName" class="form-label">username</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter username"
+              name="username"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="Email" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Enter ur Email"
+              name="userEmail"
+            />
+          </div>
+          <div class="text-center"><button
+              type="submit"
+              class="btn btn-primary"
+            >Update</button></div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card border-dark mb-3">
+      <div class="card-header">Delete user</div>
+      <div class="card-body text-dark">
+        <form action="/deleteUser" method="post">
+          <div class="form-group">
+            <label for="ID" class="form-label">ID</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter ID"
+              name="ID"
+            />
+          </div>
+          <br /><br />
+
+          <div class="text-center"><button
+              type="submit"
+              class="btn btn-danger"
+            >Delete</button></div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card border-dark mb-3">
+      <div class="card-header">Get specific user</div>
+      <div class="card-body text-dark">
+        <form action="/getSpecificUser" method="post">
+          <div class="form-group">
+            <label for="ID" class="form-label">ID</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter ID"
+              name="ID"
+            />
+          </div>
+          <br /><br />
+          <ul>
+            {{#each user}}
+              <li> ID : {{this._id}}</li>
+              <li> name : {{this.userName}}</li>
+              <li> email : {{this.userEmail}}</li>
+              <hr />
+
+            {{/each}}
+
+          </ul>
+
+          <div class="text-center"><button
+              type="submit"
+              class="btn btn-primary"
+            >Get</button></div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
